@@ -42,3 +42,6 @@ const myFunction = function(){
 
 console.log(typeof myFunction);
 myFunction(); // printing function
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// stack and heap memory
