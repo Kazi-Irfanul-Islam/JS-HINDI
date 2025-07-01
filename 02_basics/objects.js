@@ -102,3 +102,64 @@ console.log(Object.keys(JsUser));
 console.log(Object.values(JsUser));
 console.log(JsUser.hasOwnProperty('irfan'));
 
+
+// ++++++++++++++  Object De-structure  ++++++++++++++
+
+// 🧠 What is Object Destructuring in JavaScript?
+// Object destructuring is a concise way to extract properties from an object and assign them to variables
+
+let obj = {
+    name : "irfan", 
+    age : 22
+}
+
+let {name, age} = obj;
+console.log(name, age);
+
+// here name and age are directly extracted from obj
+// the variable name must match the keys in the object
+
+
+// ✅ 2. Destructuring with Renaming
+// You can rename the variable if needed:
+
+const course = {
+    courseName : "javascript",
+    price : "1000"
+};
+
+const {courseName : subject, price : cost} = course;
+console.log(subject, cost); 
+
+
+// ✅ 4. Nested Object Destructuring
+let user = {
+    name : "payel",
+    address : {
+        city : "feni", 
+        country : "Bangladesh",
+    },
+}
+
+const {address : {city, country}} = user;
+console.log(city, country);
+
+
+// ✅ Real World Example
+const response = {
+    status : 200,
+    data : {
+        user : {
+            amar_nam : "irfan",
+            amar_boyosh : 24,
+        }
+    }
+}
+
+const {
+    data : {
+        user : {amar_nam, amar_boyosh}
+    }
+} = response;
+
+console.log(amar_nam, amar_boyosh);
