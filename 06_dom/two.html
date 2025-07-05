@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM || CHAI AUR CODE</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <div class="parent">
+      <!-- this is a comment -->
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+  </body>
+  <script>
+    // Selecting the parent element with class "parent"
+    const parent = document.querySelector(".parent");
+
+    // Logging the parent element to the console
+    console.log(parent);
+
+    // Logging the HTMLCollection of all child elements (div.day) inside parent
+    console.log(parent.children);
+
+    // Logging the inner HTML (text) of the second child i.e. "Tuesday"
+    console.log(parent.children[1].innerHTML);
+
+    // Looping over each child element of parent and logging their inner text
+    for (let i = 0; i < parent.children.length; i++) {
+      console.log(parent.children[i].innerHTML);
+    }
+
+    // Changing the text color of the second day ("Tuesday") to orange
+    parent.children[1].style.color = "orange";
+
+    // Selecting the first element with class "day" (which will be "Monday")
+    const dayOne = document.querySelector(".day");
+
+    // Logging the dayOne element itself
+    console.log(dayOne);
+
+    // Logging the text inside the dayOne element
+    console.log(dayOne.innerHTML);
+
+    // Logging the parent of dayOne, which is the div with class "parent"
+    console.log(dayOne.parentElement);
+
+    // Logging the next sibling element of dayOne (which is "Tuesday")
+    console.log(dayOne.nextElementSibling);
+
+    // Logging all child nodes (including text nodes like whitespace and comments)
+    console.log("NODES : ", parent.childNodes);
+
+    // Looping through each node (elements, text, comments, etc.)
+    for (let i = 0; i < parent.childNodes.length; i++) {
+      console.log(parent.childNodes[i]);
+    }
+  </script>
+</html>

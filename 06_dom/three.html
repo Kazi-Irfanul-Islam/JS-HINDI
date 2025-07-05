@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai Aur Code</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <script>
+      // Create a new <div> element
+      const div = document.createElement("div");
+
+      // Log the created div to console (empty div initially)
+      console.log(div);
+
+      // Assign class "main" to the div
+      div.className = "main";
+
+      // Assign a random id between 1 to 11 to the div
+      div.id = Math.round(Math.random() * 10 + 1);
+
+      // Set a custom attribute "title" on the div
+      div.setAttribute("title", "general title");
+
+      // Set background color of the div to blue
+      div.style.backgroundColor = "blue";
+
+      // Add padding of 12px inside the div
+      div.style.padding = "12px";
+
+      // (Incorrect line commented out)
+      // div.innerHTML("Chai Aur Code"); // ❌ Wrong: innerHTML is a property, not a function
+
+      // Create a text node with content "chair aur code"
+      const text = document.createTextNode("chair aur code");
+
+      // Append the text node to the div
+      div.appendChild(text);
+
+      // Finally, append the whole div to the body of the document
+      document.body.appendChild(div);
+    </script>
+  </body>
+</html>

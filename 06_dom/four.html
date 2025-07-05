@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <!-- Unordered list with class 'language' -->
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+
+  <script>
+    // Function to add a new language using innerHTML (less efficient)
+    function addLanguage(langName) {
+      const li = document.createElement("li"); // create a new <li> element
+      li.innerHTML = `${langName}`; // set the innerHTML to the language name
+      document.querySelector(".language").appendChild(li); // append it to the .language list
+    }
+
+    // Add "python" and "TypeScript" using addLanguage
+    addLanguage("python");
+    addLanguage("TypeScript");
+
+    // Optimized function to add a new language using createTextNode (preferred method)
+    function addOptLanguage(langName) {
+      const li = document.createElement("li"); // create a new <li> element
+      li.appendChild(document.createTextNode(langName)); // add text node inside li
+      document.querySelector(`.language`).appendChild(li); // append li to .language list
+    }
+
+    // Add "Golang" using the optimized method
+    addOptLanguage("Golang");
+
+    // --------------------------
+    // EDIT SECTION
+    // --------------------------
+
+    // Select the second <li> in the list (which is currently "python")
+    const secondLanguage = document.querySelector("li:nth-child(2)");
+    console.log(secondLanguage.innerHTML); // logs "python"
+
+    // Create a new <li> with text "C++"
+    const newli = document.createElement("li");
+    newli.textContent = "C++"; // set text content
+
+    // Replace the second language ("python") with new <li> containing "C++"
+    secondLanguage.replaceWith(newli);
+
+    // Select the first <li> (which is now "Javascript") and remove it from the list
+    const firstLanguage = document.querySelector("li:nth-child(1)");
+    firstLanguage.remove(); // removes "Javascript" from the DOM
+  </script>
+</html>
