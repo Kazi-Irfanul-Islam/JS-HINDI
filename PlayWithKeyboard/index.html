@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        background-color: #1e1e1e;
+        color: white;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #f0db4f;
+      }
+
+      .card-container {
+        background-color: #292929;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(240, 219, 79, 0.3);
+        text-align: center;
+        min-width: 300px;
+        animation: fadeIn 0.4s ease-in-out;
+      }
+
+      .card-container table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+
+      .card-container th,
+      .card-container td {
+        border: 1px solid #f0db4f;
+        padding: 12px 16px;
+        font-size: 1.1rem;
+      }
+
+      .card-container th {
+        background-color: #f0db4f;
+        color: #1e1e1e;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Press Any Key</h1>
+    <div id="insert" class="card-container">
+      <p>Waiting for keypress...</p>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
